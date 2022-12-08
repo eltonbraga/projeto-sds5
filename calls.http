@@ -1,2 +1,10 @@
-###
+### Sellers
 GET {{base-url}}/sellers
+
+
+### Sale
+GET {{base-url}}/sales
+
+
+### Sale in specific page and page size getting the recent sale first
+GET {{base-url}}/sales?page=0&size=30&sort=date,desc
