@@ -8,3 +8,11 @@ GET {{base-url}}/sales
 
 ### Sale in specific page and page size getting the recent sale first
 GET {{base-url}}/sales?page=0&size=30&sort=date,desc
+
+
+### Sales amount grouped by seller name
+GET {{base-url}}/sales/amount-by-seller
+
+
+### Visits and deals grouped by seller name
+GET {{base-url}}/sales/visits-and-deals-by-seller
