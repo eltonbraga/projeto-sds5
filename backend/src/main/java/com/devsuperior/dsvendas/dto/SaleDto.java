@@ -1,4 +1,4 @@
-package com.devsuperior.dsvendas.controllers.dto;
+package com.devsuperior.dsvendas.dto;
 
 import java.time.LocalDate;
 

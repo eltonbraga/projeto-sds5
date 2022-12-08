@@ -1,16 +1,13 @@
 package com.devsuperior.dsvendas.services;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.devsuperior.dsvendas.controllers.dto.SaleDto;
-import com.devsuperior.dsvendas.controllers.dto.SellerDto;
 import com.devsuperior.dsvendas.domains.Sale;
+import com.devsuperior.dsvendas.dto.SaleDto;
+import com.devsuperior.dsvendas.dto.SellerDto;
 import com.devsuperior.dsvendas.repositories.SaleRepository;
 
 @Service
