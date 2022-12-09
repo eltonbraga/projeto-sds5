@@ -11,11 +11,17 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface SaleRepository extends JpaRepository<Sale, Long> {
 
-    @Query("SELECT new com.devsuperior.dsvendas.dto.SaleSumDto(obj.seller, SUM(obj.amount)) " + 
-            "FROM Sale AS obj GROUP BY obj.seller")
+    @Query("SELECT new com.devsuperior.dsvendas.dto.SaleSumDto(seller, SUM(obj.amount)) "
+        + " FROM Sale AS obj"
+        + " LEFT JOIN Seller as seller "
+        + "     ON seller.id = obj.seller.id "
+        + " GROUP BY seller.id, obj.seller.id")
     List<SaleSumDto> amountOfSalesBySeller();
 
-    @Query("SELECT new com.devsuperior.dsvendas.dto.SaleVisitsAndDealsDto(obj.seller, SUM(obj.visited), SUM(obj.deals)) " + 
-    "FROM Sale AS obj GROUP BY obj.seller")
+    @Query("SELECT new com.devsuperior.dsvendas.dto.SaleVisitsAndDealsDto(seller, SUM(obj.visited), SUM(obj.deals)) "
+            + " FROM Sale AS obj"
+            + " LEFT JOIN Seller as seller "
+            + "     ON seller.id = obj.seller.id "
+            + " GROUP BY seller.id, obj.seller.id")
     List<SaleVisitsAndDealsDto> numberOfDealsAndVisitsBySeller();
 }
