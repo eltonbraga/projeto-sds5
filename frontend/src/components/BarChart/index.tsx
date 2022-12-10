@@ -36,7 +36,6 @@ const BarChart = () => {
                 let chartCategories = visitsAndDealsBySeller.map(element => element.sellerName)
                 let chartSeries = visitsAndDealsBySeller.map(element => round((element.totalOfDeals / element.totalOfVisit) * 100, 1))
 
-                console.log(chartCategories, chartSeries)
                 setBarChartData( {
                     labels: {
                         categories: chartCategories
